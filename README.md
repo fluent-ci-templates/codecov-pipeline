@@ -18,10 +18,10 @@ dagger run fluentci codecov_pipeline
 
 ## Environment Variables
 
-| Variable      | Description                    |
-|---------------|--------------------------------|
-| CODECOV_TOKEN | Your Codecov token. (required) |
-| CODECOV_URL   | Your Codecov URL.  (optional)  |
+| Variable      | Description         | Usage    |
+|---------------|---------------------|----------|
+| CODECOV_TOKEN | Your Codecov token. | Required |
+| CODECOV_URL   | Your Codecov URL.   | Optional |
 
 ## Jobs
 
