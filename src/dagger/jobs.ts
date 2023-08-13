@@ -30,6 +30,7 @@ export const upload = async (client: Client, src = ".") => {
     .withWorkdir("/app")
     .withEnvVariable("CODECOV_TOKEN", Deno.env.get("CODECOV_TOKEN")!)
     .withEnvVariable("CODECOV_URL", Deno.env.get("CODECOV_URL") || "")
+    .withExec(["ls", "-la"])
     .withExec([
       "sh",
       "-c",
