@@ -33,10 +33,6 @@ export function generateYaml(): Workflow {
         run: setupDagger,
       },
       {
-        name: "List Jobs",
-        run: "fluentci ls .",
-      },
-      {
         name: "Upload Coverage",
         run: "dagger run fluentci codecov_pipeline",
         env: {
