@@ -1,4 +1,8 @@
 # Github Actions
+[![deno module](https://shield.deno.dev/x/codecov_pipeline)](https://deno.land/x/codecov_pipeline)
+![deno compatibility](https://shield.deno.dev/deno/^1.34)
+[![](https://img.shields.io/codecov/c/gh/fluent-ci-templates/codecov-pipeline)](https://codecov.io/gh/fluent-ci-templates/codecov-pipeline)
+
 
 The following command will generate a `.github/workflows/codecov-updoad.yml` file in your project:
 
