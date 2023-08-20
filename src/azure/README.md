@@ -7,7 +7,7 @@
 The following command will generate a `azure-pipelines.yml` file in your project:
 
 ```bash
-fluentci ap init
+fluentci ap init -t codecov_pipeline
 ```
 
 Generated file:

@@ -7,7 +7,7 @@
 The following command will generate a `buildspec.yml` file in your project:
 
 ```bash
-fluentci ac init
+fluentci ac init -t codecov_pipeline
 ```
 
 Generated file:

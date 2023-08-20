@@ -7,7 +7,7 @@
 The following command will generate a `.gitlab-ci.yml` file in your project:
 
 ```bash
-fluentci gl init
+fluentci gl init -t codecov_pipeline
 ```
 
 Generated file:

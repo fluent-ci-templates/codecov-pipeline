@@ -8,7 +8,7 @@
 The following command will generate a `.circleci/config.yml` file in your project:
 
 ```bash
-fluentci cci init
+fluentci cci init -t codecov_pipeline
 ```
 
 Generated file:
