@@ -20,3 +20,5 @@ steps:
     displayName: Setup Dagger
   - script: dagger run fluentci codecov_pipeline
     displayName: Upload Coverage
+variables:
+  CODECOV_TOKEN: $(CODECOV_TOKEN)

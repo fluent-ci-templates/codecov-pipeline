@@ -20,6 +20,8 @@ jobs:
           command: dagger run fluentci codecov_pipeline
     machine:
       image: ubuntu-2004:2023.07.1
+    environment:
+      CODECOV_TOKEN: ${{codecov.CODECOV_TOKEN}}
 workflows:
   dagger:
     jobs:

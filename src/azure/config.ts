@@ -21,6 +21,9 @@ export function generateYaml(): AzurePipeline {
       name: "Default",
       vmImage: "ubuntu-latest",
     })
+    .variables({
+      CODECOV_TOKEN: "$(CODECOV_TOKEN)",
+    })
     .step({
       script: installDeno,
       displayName: "Install Deno",

@@ -3,6 +3,11 @@ import { BuildSpec } from "fluent_aws_codepipeline";
 export function generateYaml(): BuildSpec {
   const buildspec = new BuildSpec();
   buildspec
+    .env({
+      "secrets-manager": {
+        CODECOV_TOKEN: "codecov:CODECOV_TOKEN",
+      },
+    })
     .phase("install", {
       commands: [
         "curl -fsSL https://deno.land/x/install/install.sh | sh",
