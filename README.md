@@ -23,6 +23,7 @@ dagger run fluentci codecov_pipeline
 |---------------|---------------------|----------|
 | CODECOV_TOKEN | Your Codecov token. | Required |
 | CODECOV_URL   | Your Codecov URL.   | Optional |
+| COVERAGE_FILE | Your coverage file. | Optional |
 
 ## Jobs
 

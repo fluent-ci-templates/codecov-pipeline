@@ -36,6 +36,10 @@ export const upload = async (client: Client, src = ".") => {
       "-c",
       `codecov -t $CODECOV_TOKEN ${
         Deno.env.get("CODECOV_URL") ? `--url $CODECOV_URL` : ""
+      } ${
+        Deno.env.get("COVERAGE_FILE")
+          ? `-f ${Deno.env.get("COVERAGE_FILE")}`
+          : ""
       }`,
     ]);
 
