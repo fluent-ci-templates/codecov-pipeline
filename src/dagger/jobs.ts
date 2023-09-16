@@ -1,8 +1,10 @@
-import { Client } from "@dagger.io/dagger";
+import Client from "@fluentci.io/dagger";
 
 export enum Job {
   upload = "upload",
 }
+
+export const exclude = [".devbox", "node_modules", ".fluentci"];
 
 export const upload = async (client: Client, src = ".") => {
   const context = client.host().directory(src);
@@ -24,9 +26,7 @@ export const upload = async (client: Client, src = ".") => {
     ])
     .withExec(["chmod", "a+x", "codecov"])
     .withExec(["mv", "codecov", "/usr/local/bin/codecov"])
-    .withDirectory("/app", context, {
-      exclude: [".devbox", "node_modules", ".fluentci"],
-    })
+    .withDirectory("/app", context, { exclude })
     .withWorkdir("/app")
     .withEnvVariable("CODECOV_TOKEN", Deno.env.get("CODECOV_TOKEN")!)
     .withEnvVariable("CODECOV_URL", Deno.env.get("CODECOV_URL") || "")
