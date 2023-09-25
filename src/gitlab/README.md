@@ -41,7 +41,7 @@ Generated file:
 codecov:
   extends: .dagger
   script:
-    - dagger run fluentci codecov_pipeline
+    - fluentci run codecov_pipeline
 
 ```
 

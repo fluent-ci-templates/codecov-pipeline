@@ -14,7 +14,7 @@ A ready-to-use CI/CD Pipeline that uploads coverage to [Codecov](https://about.c
 Run the following command:
 
 ```bash
-dagger run fluentci codecov_pipeline
+fluentci run codecov_pipeline
 ```
 
 ## Environment Variables

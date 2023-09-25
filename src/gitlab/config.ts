@@ -25,7 +25,7 @@ export function generateYaml(): GitlabCI {
 
   const codecov = new Job()
     .extends(".dagger")
-    .script("dagger run fluentci codecov_pipeline");
+    .script("fluentci run codecov_pipeline");
 
   return new GitlabCI()
     .addJob(".docker", docker)

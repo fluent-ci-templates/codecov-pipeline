@@ -31,7 +31,7 @@ dagger version`,
       {
         run: {
           name: "Upload Coverage",
-          command: "dagger run fluentci codecov_pipeline",
+          command: "fluentci run codecov_pipeline",
         },
       },
     ]);

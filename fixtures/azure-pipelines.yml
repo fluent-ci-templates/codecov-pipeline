@@ -18,7 +18,7 @@ steps:
         sudo mv bin/dagger /usr/local/bin
         dagger version
     displayName: Setup Dagger
-  - script: dagger run fluentci codecov_pipeline
+  - script: fluentci run codecov_pipeline
     displayName: Upload Coverage
 variables:
   CODECOV_TOKEN: $(CODECOV_TOKEN)

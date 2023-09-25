@@ -43,7 +43,7 @@ jobs:
             sudo mv bin/dagger /usr/local/bin
             dagger version
       - name: Upload Coverage
-        run: dagger run fluentci codecov_pipeline
+        run: fluentci run codecov_pipeline
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 ```

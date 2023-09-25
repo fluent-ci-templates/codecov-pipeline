@@ -37,7 +37,7 @@ export function generateYaml(): AzurePipeline {
       displayName: "Setup Dagger",
     })
     .step({
-      script: "dagger run fluentci codecov_pipeline",
+      script: "fluentci run codecov_pipeline",
       displayName: "Upload Coverage",
     });
   return azurePipeline;

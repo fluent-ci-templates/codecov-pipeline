@@ -20,7 +20,7 @@ export function generateYaml(): BuildSpec {
       ],
     })
     .phase("build", {
-      commands: ["dagger run fluentci codecov_pipeline"],
+      commands: ["fluentci run codecov_pipeline"],
     })
     .phase("post_build", {
       commands: ["echo Build completed on `date`"],

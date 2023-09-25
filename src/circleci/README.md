@@ -34,7 +34,7 @@ jobs:
           dagger version
       - run:
           name: Upload Coverage
-          command: dagger run fluentci codecov_pipeline
+          command: fluentci run codecov_pipeline
     machine:
       image: ubuntu-2004:2023.07.1
     environment:

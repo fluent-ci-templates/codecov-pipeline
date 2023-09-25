@@ -29,7 +29,7 @@ phases:
       - dagger version
   build:
     commands:
-      - dagger run fluentci codecov_pipeline
+      - fluentci run codecov_pipeline
   post_build:
     commands:
       - echo Build completed on `date`
