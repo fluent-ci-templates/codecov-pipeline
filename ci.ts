@@ -1,12 +1,10 @@
-const command = new Deno.Command(Deno.execPath(), {
-  args: [
-    "run",
-    "-A",
-    "--import-map=https://deno.land/x/codecov_pipeline/import_map.json",
-    "https://deno.land/x/codecov_pipeline/src/dagger/runner.ts",
-  ],
-});
+import Client, { connect } from "https://sdk.fluentci.io/v0.1.9/mod.ts";
+import { upload } from "https://deno.land/x/codecov_pipeline/mod.ts";
 
-const { stdout } = await command.output();
+function pipeline(src = ".") {
+  connect(async (client: Client) => {
+    await upload(client, src);
+  });
+}
 
-console.log(new TextDecoder().decode(stdout));
+pipeline();
