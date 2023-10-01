@@ -1,4 +1,4 @@
-import Client from "../../deps.ts";
+import { client } from "./dagger.ts";
 
 export enum Job {
   upload = "upload",
@@ -6,9 +6,9 @@ export enum Job {
 
 export const exclude = [".devbox", "node_modules", ".fluentci"];
 
-export const upload = async (client: Client, src = ".") => {
+export const upload = async (src = ".", token?: string) => {
   const context = client.host().directory(src);
-  if (!Deno.env.get("CODECOV_TOKEN")) {
+  if (!Deno.env.get("CODECOV_TOKEN") && !token) {
     console.log("CODECOV_TOKEN is not set. Skipping code coverage upload.");
     Deno.exit(1);
   }
@@ -28,7 +28,10 @@ export const upload = async (client: Client, src = ".") => {
     .withExec(["mv", "codecov", "/usr/local/bin/codecov"])
     .withDirectory("/app", context, { exclude })
     .withWorkdir("/app")
-    .withEnvVariable("CODECOV_TOKEN", Deno.env.get("CODECOV_TOKEN")!)
+    .withEnvVariable(
+      "CODECOV_TOKEN",
+      Deno.env.get("CODECOV_TOKEN") ? Deno.env.get("CODECOV_TOKEN")! : token!
+    )
     .withEnvVariable("CODECOV_URL", Deno.env.get("CODECOV_URL") || "")
     .withExec(["ls", "-la"])
     .withExec([
@@ -45,21 +48,17 @@ export const upload = async (client: Client, src = ".") => {
 
   const result = await ctr.stdout();
 
-  console.log(result);
+  return result;
 };
 
-export type JobExec = (
-  client: Client,
-  src?: string
-) =>
-  | Promise<void>
+export type JobExec = (src?: string) =>
+  | Promise<string>
   | ((
-      client: Client,
       src?: string,
       options?: {
         ignore: string[];
       }
-    ) => Promise<void>);
+    ) => Promise<string>);
 
 export const runnableJobs: Record<Job, JobExec> = {
   [Job.upload]: upload,
