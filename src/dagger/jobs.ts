@@ -48,7 +48,7 @@ export const upload = async (src = ".", token?: string) => {
 
   const result = await ctr.stdout();
 
-  return result;
+  return result.replace(/(\r\n|\n|\r)/gm, "");
 };
 
 export type JobExec = (src?: string) =>
