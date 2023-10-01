@@ -50,7 +50,7 @@ export const upload = async (src = ".", token?: string) => {
 
   console.log(result);
 
-  return "Code coverage uploaded";
+  return "Codecov upload complete.";
 };
 
 export type JobExec = (src?: string) =>
