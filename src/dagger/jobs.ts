@@ -48,7 +48,9 @@ export const upload = async (src = ".", token?: string) => {
 
   const result = await ctr.stdout();
 
-  return result.replace(/(\r\n|\n|\r)/gm, "");
+  console.log(result);
+
+  return "Code coverage uploaded";
 };
 
 export type JobExec = (src?: string) =>
