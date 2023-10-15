@@ -1,4 +1,4 @@
-import { client } from "./dagger.ts";
+import Client, { connect } from "../../deps.ts";
 
 export enum Job {
   upload = "upload",
@@ -7,49 +7,50 @@ export enum Job {
 export const exclude = [".devbox", "node_modules", ".fluentci"];
 
 export const upload = async (src = ".", token?: string) => {
-  const context = client.host().directory(src);
-  if (!Deno.env.get("CODECOV_TOKEN") && !token) {
-    console.log("CODECOV_TOKEN is not set. Skipping code coverage upload.");
-    Deno.exit(1);
-  }
+  await connect(async (client: Client) => {
+    const context = client.host().directory(src);
+    if (!Deno.env.get("CODECOV_TOKEN") && !token) {
+      console.log("CODECOV_TOKEN is not set. Skipping code coverage upload.");
+      Deno.exit(1);
+    }
 
-  const ctr = client
-    .pipeline(Job.upload)
-    .container()
-    .from("alpine:latest")
-    .withExec(["apk", "update"])
-    .withExec(["apk", "add", "curl", "git"])
-    .withExec([
-      "curl",
-      "-Os",
-      "https://uploader.codecov.io/latest/alpine/codecov",
-    ])
-    .withExec(["chmod", "a+x", "codecov"])
-    .withExec(["mv", "codecov", "/usr/local/bin/codecov"])
-    .withDirectory("/app", context, { exclude })
-    .withWorkdir("/app")
-    .withEnvVariable(
-      "CODECOV_TOKEN",
-      Deno.env.get("CODECOV_TOKEN") ? Deno.env.get("CODECOV_TOKEN")! : token!
-    )
-    .withEnvVariable("CODECOV_URL", Deno.env.get("CODECOV_URL") || "")
-    .withExec(["ls", "-la"])
-    .withExec([
-      "sh",
-      "-c",
-      `codecov -t $CODECOV_TOKEN ${
-        Deno.env.get("CODECOV_URL") ? `--url $CODECOV_URL` : ""
-      } ${
-        Deno.env.get("COVERAGE_FILE")
-          ? `-f ${Deno.env.get("COVERAGE_FILE")}`
-          : ""
-      }`,
-    ]);
+    const ctr = client
+      .pipeline(Job.upload)
+      .container()
+      .from("alpine:latest")
+      .withExec(["apk", "update"])
+      .withExec(["apk", "add", "curl", "git"])
+      .withExec([
+        "curl",
+        "-Os",
+        "https://uploader.codecov.io/latest/alpine/codecov",
+      ])
+      .withExec(["chmod", "a+x", "codecov"])
+      .withExec(["mv", "codecov", "/usr/local/bin/codecov"])
+      .withDirectory("/app", context, { exclude })
+      .withWorkdir("/app")
+      .withEnvVariable(
+        "CODECOV_TOKEN",
+        Deno.env.get("CODECOV_TOKEN") ? Deno.env.get("CODECOV_TOKEN")! : token!
+      )
+      .withEnvVariable("CODECOV_URL", Deno.env.get("CODECOV_URL") || "")
+      .withExec(["ls", "-la"])
+      .withExec([
+        "sh",
+        "-c",
+        `codecov -t $CODECOV_TOKEN ${
+          Deno.env.get("CODECOV_URL") ? `--url $CODECOV_URL` : ""
+        } ${
+          Deno.env.get("COVERAGE_FILE")
+            ? `-f ${Deno.env.get("COVERAGE_FILE")}`
+            : ""
+        }`,
+      ]);
 
-  const result = await ctr.stdout();
+    const result = await ctr.stdout();
 
-  console.log(result);
-
+    console.log(result);
+  });
   return "Codecov upload complete.";
 };
 
