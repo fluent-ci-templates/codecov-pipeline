@@ -1,0 +1,5 @@
+{
+  "root": "",
+  "name": "codecov",
+  "sdkRuntime": "tsiry/dagger-sdk-deno"
+}
