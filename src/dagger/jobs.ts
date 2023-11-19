@@ -1,5 +1,6 @@
-import Client from "../../deps.ts";
+import Client, { Directory } from "../../deps.ts";
 import { connect } from "../../sdk/connect.ts";
+import { getDirectory } from "./lib.ts";
 
 export enum Job {
   upload = "upload",
@@ -7,9 +8,12 @@ export enum Job {
 
 export const exclude = [".devbox", "node_modules", ".fluentci"];
 
-export const upload = async (src = ".", token?: string) => {
+export const upload = async (
+  src: string | Directory | undefined = ".",
+  token?: string
+) => {
   await connect(async (client: Client) => {
-    const context = client.host().directory(src);
+    const context = getDirectory(client, src);
     if (!Deno.env.get("CODECOV_TOKEN") && !token) {
       console.log("CODECOV_TOKEN is not set. Skipping code coverage upload.");
       Deno.exit(1);
