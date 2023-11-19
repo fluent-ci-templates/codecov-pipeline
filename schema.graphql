@@ -3,5 +3,5 @@
 
 
 type Query {
-  upload(src: String!, token: String!): String
+  upload(src: String, token: String!): String
 }

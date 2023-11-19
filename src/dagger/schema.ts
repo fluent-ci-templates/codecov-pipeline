@@ -14,7 +14,7 @@ const Query = queryType({
   definition(t) {
     t.string("upload", {
       args: {
-        src: nonNull(stringArg()),
+        src: stringArg(),
         token: nonNull(stringArg()),
       },
       resolve: async (_root, args, _ctx) => await upload(args.src, args.token),
