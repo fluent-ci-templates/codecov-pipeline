@@ -32,7 +32,7 @@ fluentci run codecov_pipeline
 | upload  | Uploads coverage to Codecov.     |
 
 ```graphql
-upload(src: String!, token: String!): String
+upload(src: String, token: String!): String
 ```
 
 ## Programmatic usage
