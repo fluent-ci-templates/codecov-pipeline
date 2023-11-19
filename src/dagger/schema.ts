@@ -17,7 +17,8 @@ const Query = queryType({
         src: stringArg(),
         token: nonNull(stringArg()),
       },
-      resolve: async (_root, args, _ctx) => await upload(args.src, args.token),
+      resolve: async (_root, args, _ctx) =>
+        await upload(args.src || undefined, args.token),
     });
   },
 });
