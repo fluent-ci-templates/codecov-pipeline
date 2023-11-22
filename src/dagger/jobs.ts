@@ -1,6 +1,6 @@
-import Client, { Directory } from "../../deps.ts";
+import Client, { Directory, Secret } from "../../deps.ts";
 import { connect } from "../../sdk/connect.ts";
-import { getDirectory } from "./lib.ts";
+import { getDirectory, getCodecovToken } from "./lib.ts";
 
 export enum Job {
   upload = "upload",
@@ -14,8 +14,9 @@ export const upload = async (
 ) => {
   await connect(async (client: Client) => {
     const context = getDirectory(client, src);
-    if (!Deno.env.get("CODECOV_TOKEN") && !token) {
-      console.log("CODECOV_TOKEN is not set. Skipping code coverage upload.");
+    const secret = getCodecovToken(client, token);
+    if (!secret) {
+      console.error("CODECOV_TOKEN is not set. Skipping code coverage upload.");
       Deno.exit(1);
     }
 
@@ -34,10 +35,7 @@ export const upload = async (
       .withExec(["mv", "codecov", "/usr/local/bin/codecov"])
       .withDirectory("/app", context, { exclude })
       .withWorkdir("/app")
-      .withEnvVariable(
-        "CODECOV_TOKEN",
-        Deno.env.get("CODECOV_TOKEN") ? Deno.env.get("CODECOV_TOKEN")! : token!
-      )
+      .withSecretVariable("CODECOV_TOKEN", secret)
       .withEnvVariable("CODECOV_URL", Deno.env.get("CODECOV_URL") || "")
       .withExec(["ls", "-la"])
       .withExec([

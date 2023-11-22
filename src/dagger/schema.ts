@@ -33,6 +33,7 @@ const schema = makeSchema({
 
 schema.description = JSON.stringify({
   "upload.src": "directory",
+  "upload.token": "secret",
 });
 
 export { schema };
