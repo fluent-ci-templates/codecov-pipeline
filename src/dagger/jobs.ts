@@ -10,7 +10,7 @@ export const exclude = [".devbox", "node_modules", ".fluentci"];
 
 export const upload = async (
   src: string | Directory | undefined = ".",
-  token?: string
+  token?: string | Secret
 ) => {
   await connect(async (client: Client) => {
     const context = getDirectory(client, src);
