@@ -8,10 +8,17 @@ export enum Job {
 
 export const exclude = [".devbox", "node_modules", ".fluentci"];
 
-export const upload = async (
-  src: string | Directory | undefined = ".",
-  token?: string | Secret
-) => {
+/**
+ * @function
+ * @description Uploads code coverage to Codecov
+ * @param {string} src
+ * @param {string} token
+ * @returns {string}
+ */
+export async function upload(
+  src: string | Directory,
+  token: string | Secret
+): Promise<string> {
   await connect(async (client: Client) => {
     const context = getDirectory(client, src);
     const secret = getCodecovToken(client, token);
@@ -55,16 +62,12 @@ export const upload = async (
     console.log(result);
   });
   return "Codecov upload complete.";
-};
+}
 
-export type JobExec = (src?: string) =>
-  | Promise<string>
-  | ((
-      src?: string,
-      options?: {
-        ignore: string[];
-      }
-    ) => Promise<string>);
+export type JobExec = (
+  src: string | Directory,
+  token: string | Secret
+) => Promise<string>;
 
 export const runnableJobs: Record<Job, JobExec> = {
   [Job.upload]: upload,
