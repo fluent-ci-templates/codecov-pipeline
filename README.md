@@ -38,8 +38,11 @@ dagger mod install github.com/fluent-ci-templates/codecov-pipeline@mod
 |---------|----------------------------------|
 | upload  | Uploads coverage to Codecov.     |
 
-```graphql
-upload(src: String, token: String!): String
+```typescript
+upload(
+  src: string | Directory,
+  token: string | Secret
+): Promise<string>
 ```
 
 ## Programmatic usage
