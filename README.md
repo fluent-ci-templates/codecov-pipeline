@@ -8,6 +8,7 @@
 
 A ready-to-use CI/CD Pipeline that uploads coverage to [Codecov](https://about.codecov.io/) ☂️.
 
+![Made with VHS](https://vhs.charm.sh/vhs-bEdRHI7ddO3h0UffaWJWd.gif)
 
 ## 🚀 Usage
 
