@@ -20,8 +20,8 @@ export async function upload(
   token: string | Secret
 ): Promise<string> {
   await connect(async (client: Client) => {
-    const context = getDirectory(client, src);
-    const secret = getCodecovToken(client, token);
+    const context = await getDirectory(client, src);
+    const secret = await getCodecovToken(client, token);
     if (!secret) {
       console.error("CODECOV_TOKEN is not set. Skipping code coverage upload.");
       Deno.exit(1);
