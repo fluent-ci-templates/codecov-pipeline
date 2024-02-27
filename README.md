@@ -23,8 +23,15 @@ fluentci run codecov_pipeline
 ## Dagger Module
 
 Use as a [Dagger](https://dagger.io) Module:
+
 ```bash
-dagger mod install github.com/fluent-ci-templates/codecov-pipeline@mod
+dagger install github.com/fluent-ci-templates/codecov-pipeline@main
+```
+
+Call `upload` function with the following command:
+
+```bash
+dagger call upload --src . --token $CODECOV_TOKEN
 ```
 
 ## Environment Variables
