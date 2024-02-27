@@ -1,3 +1,7 @@
+/**
+ * @module codecov
+ * @description Uploads code coverage to Codecov ☂️
+ */
 import Client, { Directory, Secret } from "../../deps.ts";
 import { connect } from "../../sdk/connect.ts";
 import { getDirectory, getCodecovToken } from "./lib.ts";
