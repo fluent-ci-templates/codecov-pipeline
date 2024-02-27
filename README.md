@@ -5,9 +5,6 @@
 ![deno compatibility](https://shield.deno.dev/deno/^1.37)
 [![](https://img.shields.io/codecov/c/gh/fluent-ci-templates/codecov-pipeline)](https://codecov.io/gh/fluent-ci-templates/codecov-pipeline)
 
-[![CodeSee](https://codesee-docs.s3.amazonaws.com/badge.svg?)](https://app.codesee.io/maps/public/bd26f000-c5a7-11ee-b402-6d85204823e2)
-
-
 A ready-to-use CI/CD Pipeline that uploads coverage to [Codecov](https://about.codecov.io/) ☂️.
 
 ![Made with VHS](https://vhs.charm.sh/vhs-bEdRHI7ddO3h0UffaWJWd.gif)
