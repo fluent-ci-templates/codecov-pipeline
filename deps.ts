@@ -23,7 +23,7 @@ export {
   EngineSessionConnectionTimeoutError,
   NotAwaitedRequestError,
   ERROR_CODES,
-} from "npm:@dagger.io/dagger@0.9.3";
+} from "npm:@dagger.io/dagger@0.10.0";
 
 export * as FluentGitlabCI from "jsr:@tsirysndr/fluent-gitlab-ci@0.5";
 export * as FluentGithubActions from "jsr:@tsirysndr/fluent-gh-actions@0.3";

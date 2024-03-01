@@ -16,6 +16,7 @@
       "jsr:@tsirysndr/fluent-codepipeline@0.3": "jsr:@tsirysndr/fluent-codepipeline@0.3.0",
       "jsr:@tsirysndr/fluent-gh-actions@0.3": "jsr:@tsirysndr/fluent-gh-actions@0.3.0",
       "jsr:@tsirysndr/fluent-gitlab-ci@0.5": "jsr:@tsirysndr/fluent-gitlab-ci@0.5.0",
+      "npm:@dagger.io/dagger@0.10.0": "npm:@dagger.io/dagger@0.10.0_graphql@16.8.1",
       "npm:@dagger.io/dagger@0.9.3": "npm:@dagger.io/dagger@0.9.3_graphql@16.8.1",
       "npm:graphql-request@6.1.0": "npm:graphql-request@6.1.0_graphql@16.8.1",
       "npm:graphql-tag@2.12.6": "npm:graphql-tag@2.12.6_graphql@16.8.1",
@@ -25,91 +26,24 @@
       "npm:yaml@2.3.1": "npm:yaml@2.3.1",
       "npm:zod@3.22.1": "npm:zod@3.22.1"
     },
-    "jsr": {
-      "@std/assert@0.217.0": {
-        "integrity": "c98e279362ca6982d5285c3b89517b757c1e3477ee9f14eb2fdf80a45aaa9642",
-        "dependencies": [
-          "jsr:@std/fmt@^0.217.0"
-        ]
-      },
-      "@std/assert@0.218.2": {
-        "integrity": "7f0a5a1a8cf86607cd6c2c030584096e1ffad27fc9271429a8cb48cfbdee5eaf",
-        "dependencies": [
-          "jsr:@std/fmt@^0.218.2"
-        ]
-      },
-      "@std/flags@0.218.2": {
-        "integrity": "0d4e8ac15e7dfede26153c63a6d55d0aad56ae88beb2ede38c14c775dfc5b25e",
-        "dependencies": [
-          "jsr:@std/assert@^0.218.2"
-        ]
-      },
-      "@std/fmt@0.217.0": {
-        "integrity": "cb99f82500b8da20202fedfa8bb94dd0222e81f0494ed9087de20ee3d8a39a8d"
-      },
-      "@std/fmt@0.218.2": {
-        "integrity": "99526449d2505aa758b6cbef81e7dd471d8b28ec0dcb1491d122b284c548788a"
-      },
-      "@std/path@0.218.2": {
-        "integrity": "b568fd923d9e53ad76d17c513e7310bda8e755a3e825e6289a0ce536404e2662",
-        "dependencies": [
-          "jsr:@std/assert@^0.218.2"
-        ]
-      },
-      "@std/testing@0.217.0": {
-        "integrity": "97508b254ca1888d512215288bfb3f192a4e6e84336ba56b189c7862258a058b",
-        "dependencies": [
-          "jsr:@std/assert@^0.217.0"
-        ]
-      },
-      "@std/testing@0.218.2": {
-        "integrity": "49410b23584c924533786e6c117d71486c1daa65f4911fd6cfc95e4edba9de7f",
-        "dependencies": [
-          "jsr:@std/assert@^0.218.2"
-        ]
-      },
-      "@tsirysndr/fluent-az-pipelines@0.3.0": {
-        "integrity": "a2a23089a186b0f04e45daa7a9df98527c54b845842c1ebe3b7f2cf03e5aec0d",
-        "dependencies": [
-          "jsr:@std/testing@0.217.0",
-          "npm:yaml@2.3.1",
-          "npm:zod@3.22.1"
-        ]
-      },
-      "@tsirysndr/fluent-circleci@0.3.0": {
-        "integrity": "f2ab207d83b7b2a728a6708a51c3ad93cf2d89b08a13460793e3b6c7af8f5dd9",
-        "dependencies": [
-          "jsr:@std/testing@0.217.0",
-          "npm:yaml@2.3.1",
-          "npm:zod@3.22.1"
-        ]
-      },
-      "@tsirysndr/fluent-codepipeline@0.3.0": {
-        "integrity": "3050df3fed469d6791831a0a83529de77732d14c27f4a1446788de2c740c73df",
-        "dependencies": [
-          "jsr:@std/testing@0.217.0",
-          "npm:yaml@2.3.1",
-          "npm:zod@3.22.1"
-        ]
-      },
-      "@tsirysndr/fluent-gh-actions@0.3.0": {
-        "integrity": "2eaff18fbe9b25042fbb321d3bec61a34a15f736ec95bd2da214dcd1c3b8d5cd",
-        "dependencies": [
-          "jsr:@std/testing@0.217.0",
-          "npm:yaml@2.3.1",
-          "npm:zod@3.22.1"
-        ]
-      },
-      "@tsirysndr/fluent-gitlab-ci@0.5.0": {
-        "integrity": "57e7d231375902358d2bd5b63766f8ffb7030157a9e3764d5e0b0fb7533dd3f9",
-        "dependencies": [
-          "jsr:@std/testing@0.217.0",
-          "npm:yaml@2.3.1",
-          "npm:zod@3.22.1"
-        ]
-      }
-    },
     "npm": {
+      "@dagger.io/dagger@0.10.0_graphql@16.8.1": {
+        "integrity": "sha512-vpFLhN0UawyoOY/Tna6oatvtfBTjuta5DPrFgeOAwT/tylIlCDb6mQRKAhRxXMsw2HkBP4RLqglCXQrNb13rvA==",
+        "dependencies": {
+          "@lifeomic/axios-fetch": "@lifeomic/axios-fetch@3.0.1",
+          "adm-zip": "adm-zip@0.5.10",
+          "env-paths": "env-paths@3.0.0",
+          "execa": "execa@8.0.1",
+          "graphql": "graphql@16.8.1",
+          "graphql-request": "graphql-request@6.1.0_graphql@16.8.1",
+          "graphql-tag": "graphql-tag@2.12.6_graphql@16.8.1",
+          "node-color-log": "node-color-log@11.0.2",
+          "node-fetch": "node-fetch@3.3.2",
+          "reflect-metadata": "reflect-metadata@0.2.1",
+          "tar": "tar@6.2.0",
+          "typescript": "typescript@5.3.3"
+        }
+      },
       "@dagger.io/dagger@0.9.3_graphql@16.8.1": {
         "integrity": "sha512-kEZ6yWfCLAPcqUB8oQ9qAR7NfWAl16ubj3gYprJGqUfA6s9WN/tG9GPZ7smxFP4tVvRIoyuMnYnOA3f2ypmrIQ==",
         "dependencies": {
@@ -329,6 +263,10 @@
         "integrity": "sha512-mSIv0cguSaEo0kbHkcPs3bohnFPq0uTBqMjwFmlF6YGRPXUPmExorLNaUEinijLV3cokZNKWcX2ieZiKoHftSw==",
         "dependencies": {}
       },
+      "node-color-log@11.0.2": {
+        "integrity": "sha512-+gD5pQpVpEkEA3He9STku4VL1EO9SaOW3HElumCd3xWorulnfr2053NCSVwPCXrkwI5ihPYucQxSCSOuS1q+Eg==",
+        "dependencies": {}
+      },
       "node-domexception@1.0.0": {
         "integrity": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==",
         "dependencies": {}
@@ -365,6 +303,10 @@
       },
       "path-key@4.0.0": {
         "integrity": "sha512-haREypq7xkM7ErfgIyA0z+Bj4AGKlMSdlQE2jvJo6huWD1EdkKYV+G/T4nq0YEF2vgTT8kqMFKo1uHn950r4SQ==",
+        "dependencies": {}
+      },
+      "reflect-metadata@0.2.1": {
+        "integrity": "sha512-i5lLI6iw9AU3Uu4szRNPPEkomnkjRTaVt9hy/bn5g/oSzekBSMeLZblcjP74AW0vBabqERLLIrz+gR8QYR54Tw==",
         "dependencies": {}
       },
       "shebang-command@2.0.0": {
@@ -409,6 +351,10 @@
       },
       "tslib@2.6.2": {
         "integrity": "sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==",
+        "dependencies": {}
+      },
+      "typescript@5.3.3": {
+        "integrity": "sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==",
         "dependencies": {}
       },
       "web-streams-polyfill@3.3.3": {
