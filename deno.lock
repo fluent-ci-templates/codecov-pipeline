@@ -22,9 +22,94 @@
       "npm:graphql-tag@2.12.6": "npm:graphql-tag@2.12.6_graphql@16.8.1",
       "npm:lodash": "npm:lodash@4.17.21",
       "npm:lodash@4.17.21": "npm:lodash@4.17.21",
+      "npm:node-color-log": "npm:node-color-log@11.0.2",
       "npm:stringify-tree@1.1.1": "npm:stringify-tree@1.1.1",
       "npm:yaml@2.3.1": "npm:yaml@2.3.1",
       "npm:zod@3.22.1": "npm:zod@3.22.1"
+    },
+    "jsr": {
+      "@std/assert@0.217.0": {
+        "integrity": "c98e279362ca6982d5285c3b89517b757c1e3477ee9f14eb2fdf80a45aaa9642",
+        "dependencies": [
+          "jsr:@std/fmt@^0.217.0"
+        ]
+      },
+      "@std/assert@0.218.2": {
+        "integrity": "7f0a5a1a8cf86607cd6c2c030584096e1ffad27fc9271429a8cb48cfbdee5eaf",
+        "dependencies": [
+          "jsr:@std/fmt@^0.218.2"
+        ]
+      },
+      "@std/flags@0.218.2": {
+        "integrity": "0d4e8ac15e7dfede26153c63a6d55d0aad56ae88beb2ede38c14c775dfc5b25e",
+        "dependencies": [
+          "jsr:@std/assert@^0.218.2"
+        ]
+      },
+      "@std/fmt@0.217.0": {
+        "integrity": "cb99f82500b8da20202fedfa8bb94dd0222e81f0494ed9087de20ee3d8a39a8d"
+      },
+      "@std/fmt@0.218.2": {
+        "integrity": "99526449d2505aa758b6cbef81e7dd471d8b28ec0dcb1491d122b284c548788a"
+      },
+      "@std/path@0.218.2": {
+        "integrity": "b568fd923d9e53ad76d17c513e7310bda8e755a3e825e6289a0ce536404e2662",
+        "dependencies": [
+          "jsr:@std/assert@^0.218.2"
+        ]
+      },
+      "@std/testing@0.217.0": {
+        "integrity": "97508b254ca1888d512215288bfb3f192a4e6e84336ba56b189c7862258a058b",
+        "dependencies": [
+          "jsr:@std/assert@^0.217.0"
+        ]
+      },
+      "@std/testing@0.218.2": {
+        "integrity": "49410b23584c924533786e6c117d71486c1daa65f4911fd6cfc95e4edba9de7f",
+        "dependencies": [
+          "jsr:@std/assert@^0.218.2"
+        ]
+      },
+      "@tsirysndr/fluent-az-pipelines@0.3.0": {
+        "integrity": "a2a23089a186b0f04e45daa7a9df98527c54b845842c1ebe3b7f2cf03e5aec0d",
+        "dependencies": [
+          "jsr:@std/testing@0.217.0",
+          "npm:yaml@2.3.1",
+          "npm:zod@3.22.1"
+        ]
+      },
+      "@tsirysndr/fluent-circleci@0.3.0": {
+        "integrity": "f2ab207d83b7b2a728a6708a51c3ad93cf2d89b08a13460793e3b6c7af8f5dd9",
+        "dependencies": [
+          "jsr:@std/testing@0.217.0",
+          "npm:yaml@2.3.1",
+          "npm:zod@3.22.1"
+        ]
+      },
+      "@tsirysndr/fluent-codepipeline@0.3.0": {
+        "integrity": "3050df3fed469d6791831a0a83529de77732d14c27f4a1446788de2c740c73df",
+        "dependencies": [
+          "jsr:@std/testing@0.217.0",
+          "npm:yaml@2.3.1",
+          "npm:zod@3.22.1"
+        ]
+      },
+      "@tsirysndr/fluent-gh-actions@0.3.0": {
+        "integrity": "2eaff18fbe9b25042fbb321d3bec61a34a15f736ec95bd2da214dcd1c3b8d5cd",
+        "dependencies": [
+          "jsr:@std/testing@0.217.0",
+          "npm:yaml@2.3.1",
+          "npm:zod@3.22.1"
+        ]
+      },
+      "@tsirysndr/fluent-gitlab-ci@0.5.0": {
+        "integrity": "57e7d231375902358d2bd5b63766f8ffb7030157a9e3764d5e0b0fb7533dd3f9",
+        "dependencies": [
+          "jsr:@std/testing@0.217.0",
+          "npm:yaml@2.3.1",
+          "npm:zod@3.22.1"
+        ]
+      }
     },
     "npm": {
       "@dagger.io/dagger@0.10.0_graphql@16.8.1": {
