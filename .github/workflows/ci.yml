@@ -15,6 +15,6 @@ jobs:
       - name: Run Dagger Pipelines
         run: fluentci run deno_pipeline fmt lint test
       - name: Upload to Codecov
-        run: fluentci run codecov_pipeline
+        run: dagger run deno run -A src/dagger/runner.ts
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
