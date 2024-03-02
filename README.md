@@ -18,7 +18,7 @@ Run the following command:
 fluentci run codecov_pipeline
 ```
 
-## Dagger Module
+## 🧩 Dagger Module
 
 Use as a [Dagger](https://dagger.io) Module:
 
@@ -32,7 +32,7 @@ Call `upload` function with the following command:
 dagger call upload --src . --token CODECOV_TOKEN
 ```
 
-## Environment Variables
+## 🛠️ Environment Variables
 
 | Variable      | Description         | Usage    |
 |---------------|---------------------|----------|
@@ -40,7 +40,7 @@ dagger call upload --src . --token CODECOV_TOKEN
 | CODECOV_URL   | Your Codecov URL.   | Optional |
 | COVERAGE_FILE | Your coverage file. | Optional |
 
-## Jobs
+## 📝 Jobs
 
 | Job     | Description                      |
 |---------|----------------------------------|
@@ -53,7 +53,7 @@ upload(
 ): Promise<string>
 ```
 
-## Programmatic usage
+## 👨‍💻 Programmatic usage
 
 You can also use this pipeline programmatically:
 
