@@ -29,7 +29,7 @@ dagger install github.com/fluent-ci-templates/codecov-pipeline@main
 Call `upload` function with the following command:
 
 ```bash
-dagger call upload --src . --token $CODECOV_TOKEN
+dagger call upload --src . --token CODECOV_TOKEN
 ```
 
 ## Environment Variables
