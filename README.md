@@ -58,7 +58,7 @@ upload(
 You can also use this pipeline programmatically:
 
 ```typescript
-import { upload } from "https://deno.land/x/codecov_pipeline/mod.ts";
+import { upload } from "jsr:@fluentci/codecov_pipeline";
 
 await upload();
 ```
