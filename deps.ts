@@ -8,7 +8,11 @@ import { gql } from "npm:graphql-request@6.1.0";
 export { gql };
 export { dirname, join, resolve } from "jsr:@std/path@0.218.2";
 export { parse } from "jsr:@std/flags@0.218.2";
-export { snakeCase, camelCase } from "npm:lodash@4.17.21";
+
+import * as _ from "npm:lodash@4.17.21";
+const snakeCase = _.default.snakeCase;
+const camelCase = _.default.camelCase;
+export { snakeCase, camelCase };
 
 export { ClientError, GraphQLClient } from "npm:graphql-request@6.1.0";
 export {
