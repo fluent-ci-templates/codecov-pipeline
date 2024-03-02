@@ -21,7 +21,7 @@
     "exclude": [
       "example/",
       ".fluentci/",
-      "gen/"
+      "sdk/"
     ]
   },
   "test": {
