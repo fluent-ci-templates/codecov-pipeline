@@ -1,7 +1,4 @@
-import {
-  GraphQLRequestContext,
-  GraphQLResponse,
-} from "npm:graphql-request@6.1.0";
+import { GraphQLRequestContext, GraphQLResponse } from "./types.ts";
 
 import { DaggerSDKError, DaggerSDKErrorOptions } from "./DaggerSDKError.ts";
 import { ERROR_CODES, ERROR_NAMES } from "./errors-codes.ts";

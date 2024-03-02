@@ -4,7 +4,7 @@ export type { DirectoryID, SecretID } from "./sdk/client.gen.ts";
 export { Directory, Secret } from "./sdk/client.gen.ts";
 export { brightGreen } from "jsr:@std/fmt@0.218.2/colors";
 export { stringifyTree } from "npm:stringify-tree@1.1.1";
-import * as gql from "npm:graphql-tag@2.12.6";
+import { gql } from "npm:graphql-request@6.1.0";
 export { gql };
 export { dirname, join, resolve } from "jsr:@std/path@0.218.2";
 export { parse } from "jsr:@std/flags@0.218.2";
