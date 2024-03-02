@@ -58,7 +58,7 @@ upload(
 You can also use this pipeline programmatically:
 
 ```typescript
-import { upload } from "jsr:@fluentci/codecov_pipeline";
+import { upload } from "jsr:@fluentci/codecov";
 
 await upload();
 ```
