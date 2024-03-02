@@ -23,6 +23,7 @@
       "npm:lodash": "npm:lodash@4.17.21",
       "npm:lodash@4.17.21": "npm:lodash@4.17.21",
       "npm:node-color-log": "npm:node-color-log@11.0.2",
+      "npm:node-color-log@11.0.2": "npm:node-color-log@11.0.2",
       "npm:stringify-tree@1.1.1": "npm:stringify-tree@1.1.1",
       "npm:yaml@2.3.1": "npm:yaml@2.3.1",
       "npm:zod@3.22.1": "npm:zod@3.22.1"
