@@ -2,8 +2,7 @@
  * @module codecov
  * @description Uploads code coverage to Codecov ☂️
  */
-import { Directory, Secret } from "../../deps.ts";
-import { dag } from "../../sdk/client.gen.ts";
+import { dag, Directory, Secret, env, exit } from "../../deps.ts";
 import { getDirectory, getCodecovToken } from "./lib.ts";
 
 export enum Job {
@@ -27,7 +26,8 @@ export async function upload(
   const secret = await getCodecovToken(token);
   if (!secret) {
     console.error("CODECOV_TOKEN is not set. Skipping code coverage upload.");
-    Deno.exit(1);
+    exit(1);
+    return "";
   }
 
   const ctr = dag
@@ -46,18 +46,14 @@ export async function upload(
     .withDirectory("/app", context, { exclude })
     .withWorkdir("/app")
     .withSecretVariable("CODECOV_TOKEN", secret)
-    .withEnvVariable("CODECOV_URL", Deno.env.get("CODECOV_URL") || "")
+    .withEnvVariable("CODECOV_URL", env.get("CODECOV_URL") || "")
     .withExec(["ls", "-la"])
     .withExec([
       "sh",
       "-c",
       `codecov -t $CODECOV_TOKEN ${
-        Deno.env.get("CODECOV_URL") ? `--url $CODECOV_URL` : ""
-      } ${
-        Deno.env.get("COVERAGE_FILE")
-          ? `-f ${Deno.env.get("COVERAGE_FILE")}`
-          : ""
-      }`,
+        env.get("CODECOV_URL") ? `--url $CODECOV_URL` : ""
+      } ${env.get("COVERAGE_FILE") ? `-f ${env.get("COVERAGE_FILE")}` : ""}`,
     ]);
 
   const result = await ctr.stdout();

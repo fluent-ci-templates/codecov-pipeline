@@ -1,5 +1,11 @@
-import { Directory, DirectoryID, Secret, SecretID } from "../../deps.ts";
-import { dag } from "../../sdk/client.gen.ts";
+import {
+  dag,
+  env,
+  Directory,
+  DirectoryID,
+  Secret,
+  SecretID,
+} from "../../deps.ts";
 
 export const getDirectory = async (
   src: string | Directory | undefined = "."
@@ -24,8 +30,8 @@ export const getDirectory = async (
 };
 
 export const getCodecovToken = async (token?: string | Secret) => {
-  if (Deno.env.get("CODECOV_TOKEN")) {
-    return dag.setSecret("CODECOV_TOKEN", Deno.env.get("CODECOV_TOKEN")!);
+  if (env.get("CODECOV_TOKEN")) {
+    return dag.setSecret("CODECOV_TOKEN", env.get("CODECOV_TOKEN")!);
   }
   if (token && typeof token === "string") {
     try {

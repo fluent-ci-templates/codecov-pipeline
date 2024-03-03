@@ -1,7 +1,7 @@
 export { assertEquals } from "jsr:@std/testing@0.218.2/asserts";
 
 export type { DirectoryID, SecretID } from "./sdk/client.gen.ts";
-export { Directory, Secret } from "./sdk/client.gen.ts";
+export { dag, Directory, Secret, Container } from "./sdk/client.gen.ts";
 export { brightGreen } from "jsr:@std/fmt@0.218.2/colors";
 export { stringifyTree } from "npm:stringify-tree@1.1.1";
 import { gql } from "npm:graphql-request@6.1.0";
@@ -13,6 +13,10 @@ import * as _ from "npm:lodash@4.17.21";
 const snakeCase = _.default.snakeCase;
 const camelCase = _.default.camelCase;
 export { snakeCase, camelCase };
+
+import * as env from "jsr:@tsirysndr/env-js";
+export { env };
+export { exit } from "jsr:@tsirysndr/exit-js";
 
 export { ClientError, GraphQLClient } from "npm:graphql-request@6.1.0";
 export {
