@@ -12,6 +12,7 @@ export enum Job {
 export const exclude = [".devbox", "node_modules", ".fluentci"];
 
 /**
+ * Uploads code coverage to Codecov
  * @function
  * @description Uploads code coverage to Codecov
  * @param {string} src
