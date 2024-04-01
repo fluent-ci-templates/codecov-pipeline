@@ -2,6 +2,7 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@fluentci/sdk@0.1.4": "jsr:@fluentci/sdk@0.1.4",
       "jsr:@std/assert@^0.217.0": "jsr:@std/assert@0.217.0",
       "jsr:@std/assert@^0.218.2": "jsr:@std/assert@0.218.2",
       "jsr:@std/flags@0.218.2": "jsr:@std/flags@0.218.2",
@@ -11,6 +12,8 @@
       "jsr:@std/path@0.218.2": "jsr:@std/path@0.218.2",
       "jsr:@std/testing@0.217.0": "jsr:@std/testing@0.217.0",
       "jsr:@std/testing@0.218.2": "jsr:@std/testing@0.218.2",
+      "jsr:@tsirysndr/env-js@0.1.2": "jsr:@tsirysndr/env-js@0.1.2",
+      "jsr:@tsirysndr/exit-js@0.1.0": "jsr:@tsirysndr/exit-js@0.1.0",
       "jsr:@tsirysndr/fluent-az-pipelines@0.3": "jsr:@tsirysndr/fluent-az-pipelines@0.3.0",
       "jsr:@tsirysndr/fluent-circleci@0.3": "jsr:@tsirysndr/fluent-circleci@0.3.0",
       "jsr:@tsirysndr/fluent-codepipeline@0.3": "jsr:@tsirysndr/fluent-codepipeline@0.3.0",
@@ -20,6 +23,7 @@
       "npm:@dagger.io/dagger@0.9.3": "npm:@dagger.io/dagger@0.9.3_graphql@16.8.1",
       "npm:graphql-request@6.1.0": "npm:graphql-request@6.1.0_graphql@16.8.1",
       "npm:graphql-tag@2.12.6": "npm:graphql-tag@2.12.6_graphql@16.8.1",
+      "npm:graphql@16.8.1": "npm:graphql@16.8.1",
       "npm:lodash": "npm:lodash@4.17.21",
       "npm:lodash@4.17.21": "npm:lodash@4.17.21",
       "npm:node-color-log": "npm:node-color-log@11.0.2",
@@ -29,6 +33,12 @@
       "npm:zod@3.22.1": "npm:zod@3.22.1"
     },
     "jsr": {
+      "@fluentci/sdk@0.1.4": {
+        "integrity": "8e6fd257514c86fa7ccd61685dd67a3e5e9695f1282c8376e9709c9194f66790",
+        "dependencies": [
+          "npm:graphql-request@6.1.0"
+        ]
+      },
       "@std/assert@0.217.0": {
         "integrity": "c98e279362ca6982d5285c3b89517b757c1e3477ee9f14eb2fdf80a45aaa9642",
         "dependencies": [
@@ -70,6 +80,12 @@
         "dependencies": [
           "jsr:@std/assert@^0.218.2"
         ]
+      },
+      "@tsirysndr/env-js@0.1.2": {
+        "integrity": "16a8cf4e60c8b43f4d62dd762006de40d56e5b144a56c0954a11f99ee12c5d3a"
+      },
+      "@tsirysndr/exit-js@0.1.0": {
+        "integrity": "4ea378ce2575931426bcf60d4588c9e9cf489fa93d3907cd9ee60feb38960230"
       },
       "@tsirysndr/fluent-az-pipelines@0.3.0": {
         "integrity": "a2a23089a186b0f04e45daa7a9df98527c54b845842c1ebe3b7f2cf03e5aec0d",
