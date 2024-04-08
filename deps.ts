@@ -39,3 +39,6 @@ export * as FluentGithubActions from "jsr:@tsirysndr/fluent-gh-actions@0.3";
 export * as FluentCircleCI from "jsr:@tsirysndr/fluent-circleci@0.3";
 export * as FluentAzurePipelines from "jsr:@tsirysndr/fluent-az-pipelines@0.3";
 export * as FluentAWSCodePipeline from "jsr:@tsirysndr/fluent-codepipeline@0.3";
+
+import * as fluentciSdk from "jsr:@fluentci/sdk@0.1.4";
+export { fluentciSdk };
