@@ -11,10 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup Fluent CI
-        uses: fluentci-io/setup-fluentci@v4
+        uses: fluentci-io/setup-fluentci@v5
+        with:
+          wasm: true
+          pipeline: deno
+          args: |
+            fmt
+            test
       - name: Run Dagger Pipelines
         run: |
-          fluentci run deno_pipeline fmt test
           dagger -m github.com/fluent-ci-templates/codecov-pipeline@main functions
       - name: Upload to Codecov
         run: dagger run deno run -A src/dagger/runner.ts
