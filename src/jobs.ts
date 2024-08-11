@@ -2,8 +2,8 @@
  * @module codecov
  * @description Uploads code coverage to Codecov ☂️
  */
-import { dag, Directory, Secret, env, exit } from "../../deps.ts";
-import { getDirectory, getCodecovToken } from "./lib.ts";
+import { dag, type Directory, type Secret, env, exit } from "../deps.ts";
+import { getDirectory, getCodecovToken } from "./helpers.ts";
 
 export enum Job {
   upload = "upload",
